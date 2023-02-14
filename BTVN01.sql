@@ -97,6 +97,12 @@ create table orderdetails(
    foreign key(orderNumber) references orders(orderNumber),
    foreign key(productCode) references products(productCode)
 )
+-- ) Using the MySQL SELECT statement to retrieve data from a single column example
+select orderDate from orders
+-- ) Using the MySQL SELECT statement to query data from multiple columns example
+select orderNumber,orderDate from orders
+-- Using the MySQL SELECT statement to retrieve data from all columns example
+select * from orders
 --  MySQL INSERT – simple INSERT example
 INSERT into offices(city,phone)  values(N'city A','123')
 select * from offices
@@ -109,7 +115,13 @@ select * from offices
 insert into orders(orderDate) values('2023-2-14')
 select * from orders
 
---	Inserting multiple rows exampleinsert into orders(orderDate) values('2023-2-14'),('2023-2-12'),('2023-2-13')select * from orders
+--	Inserting multiple rows example
+
+insert into orders(orderDate) values
+('2023-2-14'),
+('2023-2-12'),
+('2023-2-13')
+select * from orders
 -- Using MySQL UPDATE to update rows returned by a SELECT statement example
 select * from orders
 update orders set orderDate='2023-2-14' where 
